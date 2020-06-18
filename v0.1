@@ -1,0 +1,12 @@
+import csv
+
+file = open('kraje')
+fileReader = csv.reader(file)
+kraje = list(file)
+file = open ('miejscowosci')
+fileReader = csv.reader(file)
+miejscowosci = list(fileReader)
+
+for a in kraje:
+  if a[0:len(a)-1] in str(miejscowosci):
+    print (a)
