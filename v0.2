@@ -1,0 +1,18 @@
+import csv
+
+file = open('kraje')
+fileReader = csv.reader(file)
+kraje = list(file)
+file = open ('miejsc')
+fileReader = csv.reader(file)
+miejsc = list(fileReader)
+
+for a in kraje:
+  czesc = a[0:len(a)-2]
+  if czesc in str(miejsc):
+    print('czesc ', czesc)
+    for b in range(len(miejsc)):
+      if czesc in miejsc[b]:
+        print ('miejscowosc ',miejsc[b])
+        
+print ('finished')
