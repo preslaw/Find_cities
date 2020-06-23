@@ -1,0 +1,17 @@
+import re 
+import csv
+  
+file = open('kraje')
+fileReader = csv.reader(file)
+kraje = list(file)
+file = open ('miejsc')
+fileReader = csv.reader(file)
+miejsc = list(fileReader)
+
+
+for k in kraje:
+  kraj = k[0:len(k)-2]
+  p = re.compile('(?i)\w+\B'+kraj+'\w+')
+  print(kraj,":",p.findall(str(miejsc)))
+  p = re.compile('(?i)'+kraj+'\w+')
+  print(kraj,":",p.findall(str(miejsc))) // tu coś zle zwraca, bo niecałe nazwy
